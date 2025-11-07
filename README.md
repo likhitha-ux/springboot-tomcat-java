@@ -72,29 +72,71 @@ The game automatically saves your top 10 highest scores locally in your browser.
 3. Open `index.html` in your browser to start playing.
 
 No additional dependencies or installations required!
+## 🚀 Getting Started
 
-## Contributing
-
-Contributions are welcome! Feel free to fork the repository and submit a pull request with your improvements.
-
-## Support
-
-If you enjoy this game and would like to support its continued development, please consider making a donation:
-
-[Donate via PayPal](https://www.paypal.com/donate/?hosted_button_id=FBG94CBRX3T5N)
-
-[Donate via Patreon](https://www.patreon.com/ctechdigital)
-
-[Donate via Ko-Fi](https://ko-fi.com/ctechdigitalcom)
+### ✅ Prerequisites
 
 
-Your support helps maintain and improve this project and others. Thank you!
+- Docker installed (for containerized deployment)  
+- Modern web browser (Chrome, Firefox, Edge)
+---
+### 🖥️ Run Locally (without Docker)
+Simply open `index.html` in your browser.  
+Ensure the `statics/` and `assets/` folders are in the same directory.
 
-## License
+---
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+## 🐳 Docker Setup
 
-## Acknowledgments
+The project includes a **Dockerfile** using **Nginx Alpine** for lightweight hosting.
 
-- Inspired by the classic Snake game I used to play for hours on the old faithful Nokia 3310 phone.
-- Built with vanilla HTML, CSS, and JavaScript.
+```dockerfile
+# Use a lightweight web server base image
+FROM nginx:alpine
+
+# Remove the default nginx content
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy your game files into Nginx’s html directory
+COPY . /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx in the foreground
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+### Build & Run
+```bash
+# Build Docker image
+docker build -t snake-game .
+
+# Run container
+docker run -p 8080:80 snake-game
+```
+
+Access the game → [http://localhost:8080](http://localhost:8080)
+
+---
+
+## 📦 Key HTML Sections
+
+- **High Scores Section**: Displays top 10 scores dynamically.  
+- **Game Canvas**: Core Snake gameplay rendered on HTML5 Canvas.  
+- **Button Controls**: Start new game, toggle background, pause/resume, change colors, run demo.  
+- **Score & Level Display**: Real‑time updates during gameplay.  
+- **Demo Popup**: Automated demo with restart and play options.  
+- **Footer**: Donation links and social media icons.  
+
+---
+
+## 🤝 Contributing
+Contributions are welcome! Fork the repo, create a branch, and submit a pull request.
+
+---
+
+## 📜 License
+This project is licensed under the MIT License.
+
+---
