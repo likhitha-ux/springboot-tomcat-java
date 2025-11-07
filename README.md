@@ -15,7 +15,7 @@ This branch (`library`) focuses on the **frontend UI** for presenting e‑books,
 - 🎥 **Video Section** embedding YouTube lectures (Cloud Computing demo).  
 - 📱 **Responsive Design** for desktop and mobile screens.  
 - 🖼️ **Modern UI/UX** with hover effects, smooth scrolling, and clean typography.  
-- ⚙️ **Spring Boot + Tomcat backend integration** (for serving static resources and potential API endpoints).  
+- ⚙️ **Spring Boot** (for serving static resources and potential API endpoints).  
 
 ---
 
@@ -46,8 +46,8 @@ library/
 ### 🖥️ Run Locally
 ```bash
 # Clone the repository
-git clone https://github.com/likhitha-ux/springboot-tomcat-java.git
-cd springboot-tomcat-java
+git clone https://github.com/likhitha-ux/Terraform-Ansible.git
+cd Terraform-Ansible
 git checkout library
 
 # Build the project
@@ -79,15 +79,6 @@ Access → [http://localhost:8080](http://localhost:8080)
 - **Features Section**: Cards with images and descriptions of library resources.  
 - **Video Section**: Embedded YouTube lecture for Cloud Computing.  
 - **Footer**: Links to Terms, Privacy, and Contact.  
-
----
-
-## 📈 Future Enhancements
-- Integrate with **Spring Boot REST APIs** for dynamic content.  
-- Add **authentication & authorization** for student/faculty access.  
-- Connect to a **database** (MySQL/PostgreSQL) for managing resources.  
-- Implement **search functionality** for books and papers.  
-- Add **CI/CD pipeline** for automated deployment.  
 
 ---
 
